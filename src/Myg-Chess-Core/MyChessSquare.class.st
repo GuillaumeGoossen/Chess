@@ -86,21 +86,19 @@ MyChessSquare >> contents [
 ]
 
 { #category : 'accessing' }
-MyChessSquare >> contents: aPiece [
+MyChessSquare >> contents: aPiece [ [
 
 	| text |
 	contents := aPiece.
 
 	text := contents
-		        ifNil: [
-			        color isBlack
-				        ifFalse: [ 'z' ]
-				        ifTrue: [ 'x' ] ]
+		        ifNil: [ self emptySquareRepresentation ]
 		        ifNotNil: [ contents renderPieceOn: self ].
 	piece text: (text asRopedText
 			 fontSize: 48;
 			 foreground: self foreground;
 			 fontName: MyOpenChessDownloadedFont new familyName)
+]
 ]
 
 { #category : 'api - configuration' }
@@ -116,17 +114,22 @@ MyChessSquare >> emptyContents [
 ]
 
 { #category : 'accessing' }
+MyChessSquare >> emptySquareRepresentation [ [
+
+	self subclassResponsibility 
+]
+]
+
+{ #category : 'accessing' }
 MyChessSquare >> file [
 	
 	^ name second
 ]
 
 { #category : 'accessing' }
-MyChessSquare >> foreground [
-			
-	^ color isBlack
-		ifTrue: [ board blackColor ]
-		ifFalse: [ board whiteColor ]
+MyChessSquare >> foreground [ [		
+	self subclassResponsibility
+]
 ]
 
 { #category : 'testing' }
@@ -185,7 +188,14 @@ MyChessSquare >> name [
 MyChessSquare >> name: aString [
 
 	name := aString.
-	label text: (name asRopedText foreground: color negated)
+	label text: (name asRopedText foreground: self negatedColor)
+]
+
+{ #category : 'accessing' }
+MyChessSquare >> negatedColor [ [
+
+	self subclassResponsibility 
+]
 ]
 
 { #category : 'printing' }
@@ -199,56 +209,38 @@ MyChessSquare >> printOn: aStream [
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderBishop: aBishop [ [
-    ^ aBishop isWhite
-        ifTrue: [ color isBlack ifTrue: [ 'b' ] ifFalse: [ 'B' ] ]
-        ifFalse: [ color isBlack ifTrue: [ 'v' ] ifFalse: [ 'V' ] ]
+MyChessSquare >> renderBishop: aPiece [ [
+	self subclassResponsibility
 ]
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderKing: aKing [ [
-    ^ aKing isWhite
-        ifTrue: [ color isBlack ifTrue: [ 'k' ] ifFalse: [ 'K' ] ]
-        ifFalse: [ color isBlack ifTrue: [ 'l' ] ifFalse: [ 'L' ] ]
+MyChessSquare >> renderKing: aPiece [ [
+	self subclassResponsibility
 ]
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderKnight: aKnight [ [
-    ^ aKnight isWhite
-        ifTrue: [ color isBlack ifTrue: [ 'n' ] ifFalse: [ 'N' ] ]
-        ifFalse: [ color isBlack ifTrue: [ 'm' ] ifFalse: [ 'M' ] ]
+MyChessSquare >> renderKnight: aPiece [ [
+	self subclassResponsibility
 ]
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderPawn: aPawn [ [
-    ^ aPawn isWhite
-        ifTrue: [ color isBlack ifTrue: [ 'p' ] ifFalse: [ 'P' ] ]
-        ifFalse: [ color isBlack ifTrue: [ 'o' ] ifFalse: [ 'O' ] ]
+MyChessSquare >> renderPawn: aPiece [ [
+	self subclassResponsibility
 ]
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderPiece: aPiece [ [
-    ^ aPiece renderOn: self
+MyChessSquare >> renderQueen: aPiece [ [
+	self subclassResponsibility
 ]
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderQueen: aQueen [ [
-    ^ aQueen isWhite
-        ifTrue: [ color isBlack ifTrue: [ 'q' ] ifFalse: [ 'Q' ] ]
-        ifFalse: [ color isBlack ifTrue: [ 'w' ] ifFalse: [ 'W' ] ]
-]
-]
-
-{ #category : 'rendering' }
-MyChessSquare >> renderRook: aRook [ [
-    ^ aRook isWhite
-        ifTrue: [ color isBlack ifTrue: [ 'r' ] ifFalse: [ 'R' ] ]
-        ifFalse: [ color isBlack ifTrue: [ 't' ] ifFalse: [ 'T' ] ]
+MyChessSquare >> renderRook: aPiece [ [
+	self subclassResponsibility
 ]
 ]
 

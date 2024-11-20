@@ -6,12 +6,6 @@ Class {
 }
 
 { #category : 'rendering' }
-MyQueen >> renderOn: aSquare [ [
-    ^ aSquare renderQueen: self
-]
-]
-
-{ #category : 'rendering' }
 MyQueen >> renderPieceOn: aSquare [
 
 	^ aSquare renderQueen: self
