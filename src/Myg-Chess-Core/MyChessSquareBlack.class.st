@@ -6,57 +6,48 @@ Class {
 }
 
 { #category : 'accessing' }
-MyChessSquareBlack >> emptySquareRepresentation [ [
+MyChessSquareBlack >> emptySquareRepresentation [ 
 	^ 'x'
-]
+
 ]
 
 { #category : 'accessing' }
-MyChessSquareBlack >> foreground [ [
-			
+MyChessSquareBlack >> foreground [ 
 	^ board blackColor
 ]
-]
 
 { #category : 'accessing' }
-MyChessSquareBlack >> negatedColor [ [
-
+MyChessSquareBlack >> negatedColor [ 
 	^ Color white
 ]
-]
 
 { #category : 'rendering' }
-MyChessSquareBlack >> renderBishop: aPiece [ [
+MyChessSquareBlack >> renderBishop: aPiece [ 
     ^ aPiece isWhite ifTrue: ['b'] ifFalse: ['v']
-]
+
 ]
 
 { #category : 'rendering' }
-MyChessSquareBlack >> renderKing: aPiece [ [
+MyChessSquareBlack >> renderKing: aPiece [ 
     ^ aPiece isWhite ifFalse: ['l'] ifTrue: ['k']
 ]
-]
 
 { #category : 'rendering' }
-MyChessSquareBlack >> renderKnight: aPiece [ [
+MyChessSquareBlack >> renderKnight: aPiece [ 
     ^ aPiece isWhite ifFalse: ['m'] ifTrue: ['n']
 ]
-]
 
 { #category : 'rendering' }
-MyChessSquareBlack >> renderPawn: aPiece [ [
+MyChessSquareBlack >> renderPawn: aPiece [ 
     ^ aPiece isWhite ifFalse: ['o'] ifTrue: ['p']
 ]
-]
 
 { #category : 'rendering' }
-MyChessSquareBlack >> renderQueen: aPiece [ [
+MyChessSquareBlack >> renderQueen: aPiece [ 
     ^ aPiece isWhite ifFalse: ['w'] ifTrue: ['q']
 ]
-]
 
 { #category : 'rendering' }
-MyChessSquareBlack >> renderRook: aPiece [ [
+MyChessSquareBlack >> renderRook: aPiece [ 
     ^ aPiece isWhite ifFalse: ['t'] ifTrue: ['r']
-]
 ]
