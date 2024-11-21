@@ -6,12 +6,12 @@ Class {
 }
 
 { #category : 'tests' }
-MyChessSquareBlackTest >> testContentsWithBlackPiece [ [
+MyChessSquareBlackTest >> testContentsWithBlackPiece [ 
 
     | squareTest blackPiece expectedText |
 
     "Création d'une case"
-    squareTest := MyChessSquare new.
+    squareTest := MyChessSquareBlack new.
 
     "Création d'une pièce noire"
     blackPiece := MyBishop black.
@@ -26,11 +26,11 @@ MyChessSquareBlackTest >> testContentsWithBlackPiece [ [
                                                     fontSize: 48;
                                                     foreground: squareTest foreground;
                                                     fontName: MyOpenChessDownloadedFont new familyName).
-]
+
 ]
 
 { #category : 'tests' }
-MyChessSquareBlackTest >> testContentsWithNil [ [
+MyChessSquareBlackTest >> testContentsWithNil [ 
 
     | squareTest expectedText |
 
@@ -47,11 +47,11 @@ MyChessSquareBlackTest >> testContentsWithNil [ [
                                                     fontSize: 48;
                                                     foreground: squareTest foreground;
                                                     fontName: MyOpenChessDownloadedFont new familyName).
-]
+
 ]
 
 { #category : 'tests' }
-MyChessSquareBlackTest >> testContentsWithWhitePiece [ [
+MyChessSquareBlackTest >> testContentsWithWhitePiece [ 
 
     | squareTest whitePiece expectedText |
 
@@ -71,5 +71,5 @@ MyChessSquareBlackTest >> testContentsWithWhitePiece [ [
                                                     fontSize: 48;
                                                     foreground: squareTest foreground;
                                                     fontName: MyOpenChessDownloadedFont new familyName).
-]
+
 ]

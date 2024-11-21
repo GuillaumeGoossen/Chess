@@ -6,7 +6,7 @@ Class {
 }
 
 { #category : 'tests' }
-MyChessSquareTest >> testBoard [ [
+MyChessSquareTest >> testBoard [ 
 
     | squareTest boardTest |
     squareTest := MyChessSquareWhite new.
@@ -15,11 +15,11 @@ MyChessSquareTest >> testBoard [ [
     squareTest board: boardTest.
     self assert: squareTest board equals: boardTest.
 
-]
+
 ]
 
 { #category : 'tests' }
-MyChessSquareTest >> testName [ [
+MyChessSquareTest >> testName [ 
 
     | squareTest |
     squareTest := MyChessSquareBlack new.
@@ -31,11 +31,11 @@ MyChessSquareTest >> testName [ [
     squareTest name: 'b2'.
     self assert: squareTest name equals: 'b2'.
 
-]
+
 ]
 
 { #category : 'tests' }
-MyChessSquareTest >> testPlus [ [ 
+MyChessSquareTest >> testPlus [ 
 	
 	| squareTest result boardTest |
 	
@@ -49,5 +49,5 @@ MyChessSquareTest >> testPlus [ [
 	
 	result := squareTest + (-1 @ -1).
    self assert: result name equals: 'd3'.
-]
+
 ]
