@@ -86,7 +86,7 @@ MyChessSquare >> contents [
 ]
 
 { #category : 'accessing' }
-MyChessSquare >> contents: aPiece [ [
+MyChessSquare >> contents: aPiece [ 
 
 	| text |
 	contents := aPiece.
@@ -98,7 +98,7 @@ MyChessSquare >> contents: aPiece [ [
 			 fontSize: 48;
 			 foreground: self foreground;
 			 fontName: MyOpenChessDownloadedFont new familyName)
-]
+
 ]
 
 { #category : 'api - configuration' }
@@ -114,10 +114,10 @@ MyChessSquare >> emptyContents [
 ]
 
 { #category : 'accessing' }
-MyChessSquare >> emptySquareRepresentation [ [
+MyChessSquare >> emptySquareRepresentation [ 
 
 	self subclassResponsibility 
-]
+
 ]
 
 { #category : 'accessing' }
@@ -127,9 +127,10 @@ MyChessSquare >> file [
 ]
 
 { #category : 'accessing' }
-MyChessSquare >> foreground [ [		
+MyChessSquare >> foreground [ 
+	
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'testing' }
@@ -192,10 +193,10 @@ MyChessSquare >> name: aString [
 ]
 
 { #category : 'accessing' }
-MyChessSquare >> negatedColor [ [
+MyChessSquare >> negatedColor [ 
 
 	self subclassResponsibility 
-]
+
 ]
 
 { #category : 'printing' }
@@ -209,39 +210,45 @@ MyChessSquare >> printOn: aStream [
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderBishop: aPiece [ [
+MyChessSquare >> renderBishop: aPiece [ 
+
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderKing: aPiece [ [
+MyChessSquare >> renderKing: aPiece [ 
+
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderKnight: aPiece [ [
+MyChessSquare >> renderKnight: aPiece [ 
+
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderPawn: aPiece [ [
+MyChessSquare >> renderPawn: aPiece [ 
+
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderQueen: aPiece [ [
+MyChessSquare >> renderQueen: aPiece [ 
+
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderRook: aPiece [ [
+MyChessSquare >> renderRook: aPiece [ 
+
 	self subclassResponsibility
-]
+
 ]
 
 { #category : 'accessing' }
