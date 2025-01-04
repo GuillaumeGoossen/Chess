@@ -3,7 +3,8 @@ Class {
 	#superclass : 'Object',
 	#instVars : [
 		'color',
-		'square'
+		'square',
+		'myChessColor'
 	],
 	#category : 'Myg-Chess-Core',
 	#package : 'Myg-Chess-Core'
@@ -29,6 +30,11 @@ MyPiece class >> white [
 MyPiece >> attackingSquares [
 
 	^ self legalTargetSquares
+]
+
+{ #category : 'accessing' }
+MyPiece >> black [
+ "^ self myChessColor: MyChessColorBlack new; yourself"
 ]
 
 { #category : 'path commands' }
@@ -69,8 +75,7 @@ MyPiece >> collectSquares: collectBlock while: untilBlock [
 
 { #category : 'accessing' }
 MyPiece >> color [
-
-	^ color
+	^ "myChessColor" color
 ]
 
 { #category : 'accessing' }
@@ -126,6 +131,12 @@ MyPiece >> id [
 ]
 
 { #category : 'testing' }
+MyPiece >> isBlack [
+	
+	"^ color = Color black."
+]
+
+{ #category : 'testing' }
 MyPiece >> isKing [
 	
 	^ false
@@ -140,7 +151,7 @@ MyPiece >> isPiece [
 { #category : 'testing' }
 MyPiece >> isWhite [
 	
-	^ color isBlack not
+	^ color = Color white.
 ]
 
 { #category : 'rendering' }
@@ -169,6 +180,16 @@ MyPiece >> moveTo: aSquare [
 	square emptyContents.
 	square := aSquare.
 	aSquare contents: self
+]
+
+{ #category : 'accessing' }
+MyPiece >> myChessColor [
+	"^ myChessColor" 
+]
+
+{ #category : 'accessing' }
+MyPiece >> myChessColor: aColor [
+	"myChessColor := aColor"
 ]
 
 { #category : 'rendering' }
@@ -242,4 +263,9 @@ MyPiece >> upRightDiagonalLegal: aBoolean [
 	^ self
 		  collectSquares: [ :aSquare | aSquare up ifNotNil: #right ]
 		  legal: aBoolean
+]
+
+{ #category : 'accessing' }
+MyPiece >> white [
+ "^ self myChessColor: MyChessColorWhite new; yourself"
 ]

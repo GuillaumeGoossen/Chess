@@ -28,6 +28,18 @@ MyChessSquareBlack >> renderBishop: aPiece [
 ]
 
 { #category : 'rendering' }
+MyChessSquareBlack >> renderBishopBlack [
+	^ 'v'
+
+]
+
+{ #category : 'rendering' }
+MyChessSquareBlack >> renderBishopWhite [ 
+	^ 'b'
+
+]
+
+{ #category : 'rendering' }
 MyChessSquareBlack >> renderKing: aPiece [ 
     ^ aPiece isWhite ifFalse: ['l'] ifTrue: ['k']
 ]

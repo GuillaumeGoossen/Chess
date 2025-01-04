@@ -217,6 +217,20 @@ MyChessSquare >> renderBishop: aPiece [
 ]
 
 { #category : 'rendering' }
+MyChessSquare >> renderBishopBlack [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
+MyChessSquare >> renderBishopWhite [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
 MyChessSquare >> renderKing: aPiece [ 
 
 	self subclassResponsibility
