@@ -19,3 +19,28 @@ MyChessColorWhite >> negated [
 MyChessColorWhite >> renderBishop: aSquare [
 	^ aSquare renderBishopWhite
 ]
+
+{ #category : 'arithmetic' }
+MyChessColorWhite >> renderKing: aSquare [
+	^ aSquare renderKingWhite
+]
+
+{ #category : 'arithmetic' }
+MyChessColorWhite >> renderKnight: aSquare [
+	^ aSquare renderKnightWhite
+]
+
+{ #category : 'arithmetic' }
+MyChessColorWhite >> renderPawn: aSquare [
+	^ aSquare renderPawnWhite
+]
+
+{ #category : 'arithmetic' }
+MyChessColorWhite >> renderQueen: aSquare [
+	^ aSquare renderQueenWhite
+]
+
+{ #category : 'arithmetic' }
+MyChessColorWhite >> renderRook: aSquare [
+	^ aSquare renderRookWhite
+]
