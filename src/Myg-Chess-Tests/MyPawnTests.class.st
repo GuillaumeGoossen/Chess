@@ -23,6 +23,39 @@ MyPawnTests >> testPawnDiagonalCapture [
 ]
 
 { #category : 'tests' }
+MyPawnTests >> testPawnEnPassantCapture [
+
+	| pawn enemyPawn board squares |
+	board := MyChessBoard empty.
+
+	"Placer un pion noir sur sa position initiale et le déplacer de deux cases."
+	board at: 'd7' put: (enemyPawn := MyPawn black).
+	enemyPawn moveTo: (board at: 'd5').
+
+	"Placer un pion blanc à proximité."
+	board at: 'e5' put: (pawn := MyPawn white).
+
+	"Vérifier les cibles disponibles pour le pion blanc."
+	squares := pawn targetSquares.
+
+	"Vérifie qu'il n'y a qu'une seule cible en diagonale pour la prise en passant."
+	self assert: (squares includes: (board at: 'd6')).
+	self deny: (squares includes: (board at: 'f6')).
+
+	"Vérifie que les mouvements possibles incluent la prise en passant et le déplacement vers l'avant."
+	self
+		assertCollection: squares
+		includesAll: (#( d6 e6 ) collect: [ :name | board at: name ]).
+
+	"Simuler la prise en passant."
+	pawn moveTo: (board at: 'd6').
+
+	"Vérifier que le plateau est correctement mis à jour."
+	self assert: (board at: 'd6') contents = pawn.
+	self assert: (board at: 'd5') contents isNil "Vérifie que la case d5 est vide."
+]
+
+{ #category : 'tests' }
 MyPawnTests >> testPawnFirstMove2Steps [
 	| pawn squares board |
 	board := MyChessBoard empty.
