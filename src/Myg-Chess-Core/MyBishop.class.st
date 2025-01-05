@@ -14,8 +14,7 @@ MyBishop >> id [
 { #category : 'rendering' }
 MyBishop >> renderPieceOn: aSquare [
 
-	"^ self myChessColor renderBishop: aSquare"
-	^ aSquare renderBishop: self
+	^ self myChessColor renderBishop: aSquare
 ]
 
 { #category : 'rendering' }

@@ -72,7 +72,7 @@ MyKing >> opponentPieces [
 { #category : 'rendering' }
 MyKing >> renderPieceOn: aSquare [
 
-	^ aSquare renderKing: self
+	^ self myChessColor renderKing: aSquare
 ]
 
 { #category : 'rendering' }

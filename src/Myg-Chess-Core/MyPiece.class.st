@@ -34,7 +34,7 @@ MyPiece >> attackingSquares [
 
 { #category : 'accessing' }
 MyPiece >> black [
- "^ self myChessColor: MyChessColorBlack new; yourself"
+ ^ self myChessColor: MyChessColorBlack new; yourself
 ]
 
 { #category : 'path commands' }
@@ -133,7 +133,7 @@ MyPiece >> id [
 { #category : 'testing' }
 MyPiece >> isBlack [
 	
-	"^ color = Color black."
+	^ color = Color black.
 ]
 
 { #category : 'testing' }
@@ -184,12 +184,12 @@ MyPiece >> moveTo: aSquare [
 
 { #category : 'accessing' }
 MyPiece >> myChessColor [
-	"^ myChessColor" 
+	^ myChessColor
 ]
 
 { #category : 'accessing' }
 MyPiece >> myChessColor: aColor [
-	"myChessColor := aColor"
+	myChessColor := aColor
 ]
 
 { #category : 'rendering' }
@@ -267,5 +267,5 @@ MyPiece >> upRightDiagonalLegal: aBoolean [
 
 { #category : 'accessing' }
 MyPiece >> white [
- "^ self myChessColor: MyChessColorWhite new; yourself"
+ ^ self myChessColor: MyChessColorWhite new; yourself
 ]
