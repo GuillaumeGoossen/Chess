@@ -210,13 +210,6 @@ MyChessSquare >> printOn: aStream [
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderBishop: aPiece [ 
-
-	self subclassResponsibility
-
-]
-
-{ #category : 'rendering' }
 MyChessSquare >> renderBishopBlack [
 
 	self subclassResponsibility
@@ -231,35 +224,70 @@ MyChessSquare >> renderBishopWhite [
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderKing: aPiece [ 
+MyChessSquare >> renderKingBlack [
 
 	self subclassResponsibility
 
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderKnight: aPiece [ 
+MyChessSquare >> renderKingWhite [
 
 	self subclassResponsibility
 
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderPawn: aPiece [ 
+MyChessSquare >> renderKnightBlack [
 
 	self subclassResponsibility
 
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderQueen: aPiece [ 
+MyChessSquare >> renderKnightWhite [
 
 	self subclassResponsibility
 
 ]
 
 { #category : 'rendering' }
-MyChessSquare >> renderRook: aPiece [ 
+MyChessSquare >> renderPawnBlack [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
+MyChessSquare >> renderPawnWhite [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
+MyChessSquare >> renderQueenBlack [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
+MyChessSquare >> renderQueenWhite [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
+MyChessSquare >> renderRookBlack [
+
+	self subclassResponsibility
+
+]
+
+{ #category : 'rendering' }
+MyChessSquare >> renderRookWhite [
 
 	self subclassResponsibility
 

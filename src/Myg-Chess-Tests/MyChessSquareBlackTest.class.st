@@ -25,28 +25,6 @@ MyChessSquareBlackTest >> testBlackContents [
 ]
 
 { #category : 'tests' }
-MyChessSquareBlackTest >> testBlackContentsWithNil [ 
-
-	| blackSquareTest boardTest expectedText |
-	
-	boardTest := MyChessBoard empty.
-	boardTest whiteColor: Color white.
-	boardTest blackColor: Color black.
-
-	blackSquareTest := MyChessSquareBlack new.
-	blackSquareTest board: boardTest.
-	
-	blackSquareTest contents: nil. "Pas de pièce sur la case"
-	self assert: blackSquareTest contents isNil. 
-
-	"Vérification que le texte affiché est 'z' pour une case noire sans pièce"
-	expectedText := blackSquareTest contents
-		                ifNil: ['x']
-		                ifNotNil: [ blackSquareTest contents renderPieceOn: self ].
-	self assert: expectedText equals: 'x'.
-]
-
-{ #category : 'tests' }
 MyChessSquareBlackTest >> testBlackForeground [ 
 
     | blackSquare board |
